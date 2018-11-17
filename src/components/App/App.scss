@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  user-select: none;
+  font-family: "Lato", sans-serif;
+  @media screen and (min-resolution: 120dpi) {
+
+    body {
+      transform: scale(0.8);
+      transform-origin: top left;
+      width: 125%;
+      height: 125%;
+    }
+  }
+}
+
+div {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 95vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

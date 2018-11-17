@@ -1,0 +1,86 @@
+div#sideMenu {
+  width: 20%;
+  float: left;
+  background-color: #242b2e;
+  color: white;
+  text-align: right;
+
+  div.logo {
+    height: 18rem;
+    width: 100%;
+    background-color: white;
+
+    p {
+      color: #364048;
+      font-size: 3rem;
+      font-weight: 200;
+    }
+  }
+
+  p.filter {
+    color: #1ab5b3;
+    align-self: flex-end;
+    padding: 0 10px 0 0;
+
+  }
+
+  ul.large {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #364048;
+
+    li {
+      border-bottom: 1px solid #242b2e;
+      line-height: 3rem;
+      float: right;
+      width: 100%;
+      font-weight: 300;
+
+      p {
+        margin: 0;
+        padding-right: 10px;
+      }
+    }
+
+    li:hover {
+      background-color: #1ab5b3;
+    }
+
+  }
+
+  ul.small {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 0.75rem;
+      line-height: 0.9rem;
+
+      p {
+        margin: 0;
+        padding-right: 10px;
+        color: #6b7072;
+      }
+
+      p:hover {
+        color: white;
+      }
+    }
+  }
+
+  div.logos {
+    height: 1rem;
+  }
+
+  p.copy {
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+    padding-right: 10px;
+    color: #6b7072;
+    float: right;
+  }
+}
