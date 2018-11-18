@@ -1,11 +1,17 @@
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: black;
   user-select: none;
   font-family: "Lato", sans-serif;
+  min-height: 100%;
   @media screen and (min-resolution: 120dpi) {
 
     body {
@@ -15,16 +21,6 @@ body {
       height: 125%;
     }
   }
+
 }
 
-div {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  width: 95vw;
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}

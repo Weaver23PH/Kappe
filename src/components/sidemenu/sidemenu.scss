@@ -1,19 +1,26 @@
 div#sideMenu {
-  width: 20%;
+  width: 15%;
   float: left;
   background-color: #242b2e;
   color: white;
   text-align: right;
+  height: 100%;
 
   div.logo {
-    height: 18rem;
+    height: 12rem;
     width: 100%;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
 
     p {
       color: #364048;
       font-size: 3rem;
       font-weight: 200;
+      padding:  1rem 0 1rem 0;
+      margin: 0;
     }
   }
 
@@ -21,6 +28,7 @@ div#sideMenu {
     color: #1ab5b3;
     align-self: flex-end;
     padding: 0 10px 0 0;
+    margin: 0;
 
   }
 
@@ -29,7 +37,7 @@ div#sideMenu {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: #364048;
+
 
     li {
       border-bottom: 1px solid #242b2e;
@@ -41,13 +49,13 @@ div#sideMenu {
       p {
         margin: 0;
         padding-right: 10px;
+        background-color: #364048;
+      }
+
+      p:hover {
+        background-color: #1ab5b3;
       }
     }
-
-    li:hover {
-      background-color: #1ab5b3;
-    }
-
   }
 
   ul.small {
