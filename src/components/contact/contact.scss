@@ -3,10 +3,10 @@ div.map {
   height: 100%;
   float: right;
   position: relative;
-  background: url("./image/map.jpg") no-repeat;
-  background-size: cover;
   font-weight: 200;
-
+canvas{
+  height: 100%;
+}
   div.mapPopup {
     position: absolute;
     background-color: white;

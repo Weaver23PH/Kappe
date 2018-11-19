@@ -39,6 +39,7 @@ module.exports = {
                 test: /\.global.scss$/,
                 use: ["style-loader", "css-loader", "sass-loader", "postcss-loader"]
             },
+
             {
                 test: /\.(jpg|png)$/i,
                 use: [

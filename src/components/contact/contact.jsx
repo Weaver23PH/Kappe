@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from "./contact.scss";
+import Mappe from "../map/map"
 
 class Contact extends React.Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div className={styles.map} onClick={this.handleClick}>
+                <Mappe/>
                 {this.state.pointerClicked && <div className={styles.mapPopup}>
                     <div>
                         <h2>Get in touch with us</h2>

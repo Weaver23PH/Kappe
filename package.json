@@ -23,11 +23,10 @@
     "postcss-loader": "^2.1.6",
     "postcss-preset-env": "^6.2.0",
     "react": "^16.5.2",
-    "react-3d-cube": "^1.0.5",
     "react-dom": "^16.5.2",
     "react-image-gallery": "^0.8.12",
+    "react-openlayers": "^0.2.1",
     "react-router-dom": "^4.3.1",
-    "react-webcam": "^1.0.4",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
@@ -51,5 +50,11 @@
   "bugs": {
     "url": ""
   },
-  "homepage": ""
+  "homepage": "",
+  "dependencies": {
+    "0": "0.0.0",
+    "antd": "^3.0.3",
+    "less": "^3.8.1",
+    "ol": "^4.6.5"
+  }
 }
