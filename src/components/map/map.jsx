@@ -15,6 +15,9 @@ import SideMenu from "../sidemenu/sidemenu";
 // import styles from 'ol/ol.css';
 
 class Mappe extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
     componentDidMount() {
         var wroclawCoords = [17.0333, 51.1098];
@@ -38,37 +41,47 @@ class Mappe extends React.Component {
                 zoom: 13
             })
         });
-
-
-
-
-        map.on('click', this.handleMapClick.bind(this));
-
-        // save map and layer references to local state
-        this.setState({
-            map: map,
+        var iconFeature = new Feature({
+            projection: "EPSG:4326",
+            geometry: new Point(wroclawCoords),
+            name: "Kappe"
         });
+        vectorSource.addFeature(iconFeature);
+        map.on('click', function (evt) {
+            var feature = map.forEachFeatureAtPixel(evt.pixel,
+                function (feature) {
+                    return feature;
+                });
+            if (feature) {
+                this.props.showPopup();
+                this.setState({
+                    map: map,
+                });
 
+            }
+        });
     }
-
-    handleMapClick(event) {
-
-
-        // derive map coordinate (references map from Wrapper Component state)
-        var clickedCoordinate = this.state.map.getCoordinateFromPixel(event.pixel);
-
-
-    }
+    //
+    // handleMapClick = (event) => {
+    //     this.props.changeDisplay;
+    //
+    //     // derive map coordinate (references map from Wrapper Component state)
+    //     var clickedCoordinate = this.state.map.getCoordinateFromPixel(event.pixel);
+    //
+    //
+    // }
 
     render() {
-        let style= {
+        let style = {
             height: "100%",
-            width: "100%"
-        }
+            width: "100%",
+            filter: "grayscale(100%)"
+        };
         return (
             <div ref="mapContainer" style={style}></div>
         );
     }
 
 }
+
 export default Mappe;
