@@ -61,8 +61,12 @@ class Mappe extends React.Component {
     }
 
     render() {
+        let style= {
+            height: "100%",
+            width: "100%"
+        }
         return (
-            <div ref="mapContainer"></div>
+            <div ref="mapContainer" style={style}></div>
         );
     }
 

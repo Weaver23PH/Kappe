@@ -25,7 +25,6 @@ class Contact extends React.Component {
             <div className={styles.map} onClick={this.handleClick}>
                 <Mappe/>
                 {this.state.pointerClicked && <div className={styles.mapPopup}>
-                    <div>
                         <h2>Get in touch with us</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam aspernatur atque,
                             consequatur dolor, dolorum error facere fugit iusto, pariatur possimus quae quis recusandae
@@ -43,7 +42,7 @@ class Contact extends React.Component {
                             </div>
                         </form>
                     </div>
-                </div>}
+}
             </div>
         )
     }
