@@ -19,11 +19,10 @@ class Contact extends React.Component {
     };
 
 
-
     render() {
         return (
             <div className={styles.map}>
-                <Mappe showPopoup={this.handleClick}/>
+                <Mappe showPopup={this.handleClick.bind(this)}/>
                 {this.state.pointerClicked && <div className={styles.mapPopup}>
                         <h2>Get in touch with us</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam aspernatur atque,
