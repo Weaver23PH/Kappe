@@ -15,13 +15,17 @@ class Contact extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pointerClicked: false
+            pointerClicked: false,
+            name: "",
+            website: "",
+            email: "",
+            message: ""
         }
     }
 
     componentDidMount() {
         let contact = this;
-        let KappeCoords = [144.9578,-37.81];
+        let KappeCoords = [144.9578, -37.81];
         let vectorSource = new VectorSource({});
         let vectorLayer = new VectorLayer({
             source: vectorSource,
@@ -75,6 +79,27 @@ class Contact extends React.Component {
         });
     }
 
+    handleNameChange = (event) => {
+        this.setState({
+            name: event.target.value
+        });
+    };
+    handleEmailChange = (event) => {
+        this.setState({
+            email: event.target.value
+        });
+    };
+    handleWebChange = (event) => {
+        this.setState({
+            website: event.target.value
+        });
+    };
+    handleMessageChange = (event) => {
+        this.setState({
+            message: event.target.value
+        });
+    };
+
     render() {
 
         let style = {
@@ -96,19 +121,23 @@ class Contact extends React.Component {
                         <div className={styles.contactData}>
                             <div className={styles.inputBox}>
                                 <i className="fas fa-user"></i>
-                                <input type="text" value="name" placeholder="Name" size="40"/>
+                                <input type="text" value={this.state.name} onChange={this.handleNameChange}
+                                       placeholder="Name" size="40"/>
                             </div>
                             <div className={styles.inputBox}>
                                 <i className="far fa-envelope"></i>
-                                <input type="text" value="email" placeholder="email" size="40"/>
+                                <input type="text" value={this.state.email} onChange={this.handleEmailChange}
+                                       placeholder="email" size="40"/>
                             </div>
                             <div className={styles.inputBox}>
                                 <i className="fas fa-link"></i>
-                                <input type="text" value="website" placeholder="website" size="30"/>
+                                <input type="text" value={this.state.website} onChange={this.handleWebChange}
+                                       placeholder="website" size="40"/>
                             </div>
                         </div>
                         <div className={styles.contactData}>
-                            <textarea value="message" cols="40" rows="5"  placeholder="Message" />
+                            <textarea value={this.state.message} cols="40" rows="5" onChange={this.handleMessageChange}
+                                      placeholder="Message"/>
                             <button type="submit" className="styles.submit">SEND NOW</button>
                         </div>
                     </form>

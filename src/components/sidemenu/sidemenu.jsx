@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from "./sidemenu.scss";
+import Contact from '../contact/contact';
+import {Link} from 'react-router-dom';
 
 class SideMenu extends React.Component {
     constructor(props) {
