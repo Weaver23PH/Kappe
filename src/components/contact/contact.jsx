@@ -21,58 +21,29 @@ class Contact extends React.Component {
 
     componentDidMount() {
         let contact = this;
-        function greyscale(context) {
-            var canvas = context.canvas;
-            var width = canvas.width;
-            var height = canvas.height;
-            var inputData = context.getImageData(0, 0, width, height).data;
-            var ctx = canvas.getContext('2d');
-            ctx.canvas.width  = width;
-            ctx.canvas.height = height;
-            ctx.fillStyle = "rgba(0, 0, 0, 0)";
-            var myImageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height);
-            var d = myImageData.data;
-            for(let i=0; i<inputData.length; i += 4){
-                var r = inputData[i];
-                var g = inputData[i + 1];
-                var b = inputData[i + 2];
-                // CIE luminance for the RGB
-                var v = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-                d[i+0] = v;	// Red
-                d[i+1] = v;	// Green
-                d[i+2] = v;	// Blue
-                d[i+3] = 255;	// Alpha
-
-            }
-            ctx.removeAttribute("crossorigin");
-            ctx.putImageData(myImageData,0,0);
-        }
-
-        let wroclawCoords = [17.0333, 51.1098];
+        let KappeCoords = [144.9578,-37.81];
         let vectorSource = new VectorSource({});
         let vectorLayer = new VectorLayer({
             source: vectorSource,
             updateWhileAnimating: true,
-            updateWhileInteracting: true
+            updateWhileInteracting: true,
         });
         let rasterLayer = new TileLayer({
-            source: new OSM()
-        });
-        rasterLayer.on('postcompose', function(event) {
-            greyscale(event.context);
+            source: new OSM(),
+            crossOrigin: "anonymous"
         });
         let map = new Map({
             layers: [rasterLayer, vectorLayer],
             target: this.refs.mapContainer,
             view: new View({
                 projection: "EPSG:4326",
-                center: wroclawCoords,
-                zoom: 13
+                center: KappeCoords,
+                zoom: 14
             })
         });
         let iconFeature = new Feature({
             projection: "EPSG:4326",
-            geometry: new Point(wroclawCoords),
+            geometry: new Point(KappeCoords),
             name: "Kappe "
         });
         let iconStyle = new Style({
@@ -109,7 +80,7 @@ class Contact extends React.Component {
         let style = {
             height: "100%",
             width: "100%",
-            filter: "grayscale(70%)"
+            filter: "grayscale(50%)"
         };
         return (
             <div className={styles.map}>
@@ -122,14 +93,23 @@ class Contact extends React.Component {
                         similique sint ut veritatis voluptatem voluptatum.</p>
                     <h2>Send us a message</h2>
                     <form>
-                        <div>
-                            <input type="text" value="name" placeholder="Name"/>
-                            <input type="text" value="email" placeholder="email"/>
-                            <input type="text" value="website" placeholder="website"/></div>
-                        <div>
-
-                            <textarea placeholder="Message"/>
-                            <button type="submit" className="styles.submit">Submit</button>
+                        <div className={styles.contactData}>
+                            <div className={styles.inputBox}>
+                                <i className="fas fa-user"></i>
+                                <input type="text" value="name" placeholder="Name" size="40"/>
+                            </div>
+                            <div className={styles.inputBox}>
+                                <i className="far fa-envelope"></i>
+                                <input type="text" value="email" placeholder="email" size="40"/>
+                            </div>
+                            <div className={styles.inputBox}>
+                                <i className="fas fa-link"></i>
+                                <input type="text" value="website" placeholder="website" size="30"/>
+                            </div>
+                        </div>
+                        <div className={styles.contactData}>
+                            <textarea value="message" cols="40" rows="5"  placeholder="Message" />
+                            <button type="submit" className="styles.submit">SEND NOW</button>
                         </div>
                     </form>
                 </div>
