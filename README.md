@@ -1,2 +1,2 @@
 # Kappe
-Kappe page (in progress)
+Kappe page, using React, OpenLayers5, Sass (in progress)
