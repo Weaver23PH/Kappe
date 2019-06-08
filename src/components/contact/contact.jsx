@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from "./contact.scss";
-import OSM from 'ol/source/OSM';
-import Feature from 'ol/Feature.js';
-import Map from 'ol/Map.js';
-import View from 'ol/View.js';
-import Point from 'ol/geom/Point.js';
-import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer.js';
-import VectorSource from 'ol/source/Vector.js';
+import OSM from 'ol/source/osm';
+import Feature from 'ol/feature.js';
+import Map from 'ol/map.js';
+import View from 'ol/view.js';
+import Point from 'ol/geom/point.js';
+import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layertype';
+import VectorSource from 'ol/source/vector.js';
 import {Icon, Style} from 'ol/style.js';
 
 
